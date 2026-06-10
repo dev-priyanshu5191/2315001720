@@ -1,0 +1,5 @@
+{
+  "DEPOTS_URL": "http://4.224.186.213/evaluation-service/depots",
+  "VEHICLES_URL": "http://4.224.186.213/evaluation-service/vehicles",
+  "NOTIFICATION_URL": "http://4.224.186.213/evaluation-service/notifications"
+}

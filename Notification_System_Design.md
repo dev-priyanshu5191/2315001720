@@ -1,3 +1,112 @@
+# Stage 1
+
+## Core Actions
+
+1. Create Notification
+2. Fetch Notifications
+3. Fetch Unread Notifications
+4. Mark Notification as Read
+5. Delete Notification
+6. Real-Time Notification Delivery
+
+---
+
+## API 1 - Create Notification
+
+POST /api/notifications
+
+Request Body
+
+{
+  "userId": 1042,
+  "type": "Placement",
+  "message": "Google hiring drive started"
+}
+
+Response
+
+{
+  "notificationId": "abc123",
+  "status": "created"
+}
+
+---
+
+## API 2 - Get Notifications
+
+GET /api/notifications?userId=1042&page=1&limit=20
+
+Response
+
+{
+  "notifications": []
+}
+
+---
+
+## API 3 - Get Unread Notifications
+
+GET /api/notifications/unread?userId=1042
+
+Response
+
+{
+  "notifications": []
+}
+
+---
+
+## API 4 - Mark Notification Read
+
+PATCH /api/notifications/{id}/read
+
+Response
+
+{
+  "status": "read"
+}
+
+---
+
+## API 5 - Delete Notification
+
+DELETE /api/notifications/{id}
+
+Response
+
+{
+  "status": "deleted"
+}
+
+---
+
+## Headers
+
+Authorization: Bearer <JWT_TOKEN>
+
+Content-Type: application/json
+
+---
+
+## Real-Time Notification Mechanism
+
+WebSocket will be used for real-time notification delivery.
+
+Flow:
+
+Client
+   ↓
+WebSocket Connection
+   ↓
+Notification Server
+   ↓
+Instant Notification Push
+
+Benefits:
+- No page refresh required
+- Low latency
+- Better user experience
+
 # Stage 2
 
 ## Database Choice
